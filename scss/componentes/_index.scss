@@ -1,0 +1,155 @@
+/* INDEX CSS */
+.contenedor {
+    @extend %grid-general;
+    margin-top: 150px;
+    grid-template-areas: 
+    "indexleft1 indexright1"
+    "indexleft2 indexright2"
+    "indexleft3 indexright3"
+    "indexleft4 indexright4";
+    grid-template-rows: 250px;
+
+    div {
+        p {
+            width: 90%;
+            font-size: 1vw;
+            @include font-p (#fff8dc, 1em);
+
+
+            a { 
+                color: #fff8dc; 
+                text-decoration: underline;
+
+                &:hover {
+                    color: $link-hover; 
+                }
+                &:active {
+                    color: $link-act-vis;
+                }
+            }
+        }
+    }
+    .indexleft1 {
+        grid-area: indexleft1;
+        @extend %flex-index;
+    }
+    .indexright1-box, .indexright1 {
+        grid-area: indexright1;
+        @extend %flex-index;
+    }
+    .indexright1, .indexright1-box {
+        img {
+            border-radius: 15px;
+            width: 300px;
+            max-width: 90%;
+            transition: all .8s;
+            
+            &:hover {
+                transform: translate(-20px, 20px);
+                opacity: 0.05;
+                visibility: hidden;
+            }
+        }
+
+    }
+    .indexleft2-box, .indexleft2 {
+        grid-area: indexleft2;
+        @extend %flex-index;
+    }
+    .indexleft2, .indexleft2-box {
+        img {
+            border-radius: 15px;
+            width: 300px;
+            max-width: 90%;
+            transition: all .8s;
+
+            &:hover {
+                transform: translate(20px, 20px);
+                opacity: 0.05;
+                visibility: hidden;
+            }
+        }
+    }
+    .indexright2 {
+        grid-area: indexright2;
+        @extend %flex-index;
+    }
+
+    .indexleft2-box, .indexright1-box {
+        img {
+            border-radius: 15px;
+        }
+    }
+    
+    .indexleft3 {
+        grid-area: indexleft3;
+        @extend %flex-index;
+    }
+
+    .indexright3 {
+        grid-area: indexright3;
+        @extend %flex-index;
+
+        iframe {
+            height: 150px;
+            max-width: 90%;
+            border-radius: 15px;
+        }
+    }
+    .indexleft4 {
+        grid-area: indexleft4;
+        @extend %flex-index;
+
+        iframe {
+            height: 150px;
+            max-width: 90%;
+            border-radius: 15px;
+        }
+    }
+    .indexright4 {
+        grid-area: indexright4;
+        @extend %flex-index;
+    }
+}
+@media screen and (max-width: 550px) {
+    /* index mobile */
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 10px;
+        row-gap: 0px;
+    
+        .indexleft1  {
+            height: 30px;
+            padding: 90px 0 40px 0;
+            border: none;
+        }
+        .indexright2 {
+            height: 30px;
+            padding-top: 50px;
+            border: none;
+        }
+        .indexright1, .indexright1-box, .indexleft2, .indexleft3, .indexright4 {
+            display: none;
+        }
+        .indexleft2-box, .indexright1-box, .indexright3, .indexleft4 {
+            border: none;
+
+            img {
+                transition: none;
+    
+                &:hover {
+                    transform: translate(0, 0);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: 5vw;
+    }
+
+}

@@ -1,0 +1,59 @@
+/* MULTIMEDIA CSS */
+.videos {
+    .titulo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+       
+        p {
+            display: flex;
+            width: 50%;    
+            @include font-p (#fff8dc, 1em);
+
+
+        }
+    }
+    .content-multimedia {
+        @extend %grid-general;        
+        grid-template-areas: 
+        "videoleft1 videoright1"
+        "videoleft2 videoright2";
+        justify-items: center;
+        align-items: center;
+
+        
+        .video-left1 {
+            grid-area: videoleft1;
+            @extend %videos-multimedia;
+        }
+        
+        .video-left2 {
+            grid-area: videoleft2;
+            @extend %videos-multimedia;
+            
+        }
+        
+        .video-right1 {
+            grid-area: videoright1;
+            @extend %videos-multimedia;
+            
+        }
+        
+        .video-right2 {
+            grid-area: videoright2;
+            @extend %videos-multimedia;
+        }
+    }
+    
+
+
+    @media screen and (max-width: 550px) {
+        .content-multimedia {
+            display: flex;
+            flex-direction: column;
+            padding: 25px 0;
+            margin: 20px;
+        }
+    }
+}

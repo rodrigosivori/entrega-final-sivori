@@ -1,0 +1,52 @@
+/* ABOUT TO CSS */
+.about-to {
+    display: grid;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 6px solid #c0bfbf;
+    border-radius: 50px;
+    row-gap: 25px;
+    grid-template-areas:
+    "about-title"
+    "about-img";
+    grid-template-columns: 80%;
+    justify-content: center;
+    margin: 50px;
+    margin-bottom: 150px;
+   
+    div {
+        grid-area: about-title;
+
+        p {
+            width: 100%;
+            @include font-p (#fff8dc, 1em);
+
+        }
+    }
+
+    .about-img {
+        grid-area: about-img;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        div {
+            img {
+                max-width: 100%;
+                width: 250px;
+                height: 150px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about-to {
+    grid-template-columns: 90%;
+    margin: 10px;
+    }
+
+}
+
